@@ -9,7 +9,7 @@ const ProjectsData = [
     image: "./IMDB.png",
     icons: [BiLogoReact, BiLogoCss3, SiThemoviedatabase],
     description: "This website provides information about popular , top-rated and upcoming movies.",
-    github: "https://github.com/VijayKumarReddyTalakola/IMDB",
+    github: "https://github.com/sharjeelfaiq/IMDB",
     demo: "https://imdb-rho.vercel.app",
   },
   {
@@ -18,7 +18,7 @@ const ProjectsData = [
     image: "./ecom.png",
     icons: [BiLogoReact, BiLogoTailwindCss, TbApi, TbDatabase],
     description: "This website provides users with all the basic kinds of shopping items.",
-    github: "https://github.com/VijayKumarReddyTalakola/Ecommerce-Demo",
+    github: "https://github.com/sharjeelfaiq/Ecommerce-Demo",
     demo: "https://vijay-ecommerce.vercel.app",
   },
   {
@@ -27,7 +27,7 @@ const ProjectsData = [
     image: "./chatapp.png",
     icons: [BiLogoReact, BiLogoTailwindCss, BiLogoFirebase],
     description: "This chat application provides an interface to the users to interact with their friends.",
-    github: "https://github.com/VijayKumarReddyTalakola/Chat-App",
+    github: "https://github.com/sharjeelfaiq/Chat-App",
     demo: "https://vchat4whisperchat.vercel.app",
   },
   {
@@ -36,7 +36,7 @@ const ProjectsData = [
     image: "./expense-tracker.png",
     icons: [ BiLogoMongodb, SiExpress, BiLogoReact, BiLogoRedux, BiLogoTailwindCss],
     description: "This application provides an interface for users to track their expenses .",
-    github: "https://github.com/VijayKumarReddyTalakola/Expense-Tracker",
+    github: "https://github.com/sharjeelfaiq/Expense-Tracker",
     demo: "https://vtrack-expense.vercel.app",
   },
   {
@@ -45,7 +45,7 @@ const ProjectsData = [
     image: "./car-rental-app.png",
     icons: [TbBrandNextjs, BiLogoTypescript, BiLogoTailwindCss, TbApi],
     description: "This is an online platform that allows users to rent cars for personal or business use.",
-    github: "https://github.com/VijayKumarReddyTalakola/nextjs-car-rental-app",
+    github: "https://github.com/sharjeelfaiq/nextjs-car-rental-app",
     demo: "https://car-rental-application.vercel.app",
   },
   {
@@ -54,7 +54,7 @@ const ProjectsData = [
     image: "./blog-app.png",
     icons: [TbBrandNextjs, BiLogoTailwindCss, BiLogoMongodb,TbBrandPrisma],
     description: "This application allows users to express their thoughts and experiences through blogs.",
-    github: "https://github.com/VijayKumarReddyTalakola/Blog-Application",
+    github: "https://github.com/sharjeelfaiq/Blog-Application",
     demo: "https://write-ur-blog.vercel.app",
   },
 ];

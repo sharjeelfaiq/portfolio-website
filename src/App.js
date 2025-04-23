@@ -21,7 +21,7 @@ function App() {
       <Projects />
       <Experience />
       <Contact />
-      <Footer />
+      {/* <Footer /> */}
       <ScrollToTopButton />
       <ToastContainer />
     </div>

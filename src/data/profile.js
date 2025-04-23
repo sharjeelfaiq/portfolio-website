@@ -1,14 +1,9 @@
 const ProfileData = {
   img: require("../assets/Images/hero.png"),
-  logo: require("../assets/Images/Name.png"),
-  name: "Vijay Kumar",
+  name: "Sharjeel Faiq",
   professions: ["Web Developer", "Free Lancer", "Enthusiastic Dev"],
-  info: [
-    "Knack of building web applications using MERN stack.",
-    "I enjoy designing tech websites.",
-  ],
-  resume:
-    "https://drive.google.com/drive/u/1/folders/1VLbE3u0gC3x66ClPWCUmcK75DuhTAyKx",
+  info: ["Knack of building web applications using MERN stack.", "I enjoy designing tech websites."],
+  resume: "https://drive.google.com/file/d/1sVAw8fCZLh0Ya7VgcTR014nUhoL6ly9u/view?usp=sharing",
 };
 
 export default ProfileData;
