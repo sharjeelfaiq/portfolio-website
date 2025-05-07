@@ -1,5 +1,5 @@
 import React from "react";
-import { ExternalLink, Github, Code, Eye, Tag, ArrowUpRight } from "lucide-react";
+import { ExternalLink, Github, Code, Eye, ArrowUpRight } from "lucide-react";
 import ProjectsData from "../data/projects";
 import { motion } from "framer-motion";
 
