@@ -31,7 +31,7 @@ const Profile = () => {
             data-aos-once="false"
             className="title-font md:text-3xl text-2xl mb-4 text-center font-medium text-white"
           >
-            Hello , I am{" "}
+            Hello, I am{" "}
             <span className="text-dark-orange">{ProfileData.name}</span>
           </h2>
           <div
