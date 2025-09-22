@@ -12,7 +12,7 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -22,9 +22,11 @@ const Navbar = () => {
   };
 
   return (
-    <header className={`text-white fixed inset-x-0 z-50 transition-all duration-300 ${
-      scrolled ? "bg-darkblue/95 shadow-lg" : "bg-darkblue"
-    }`}>
+    <header
+      className={`text-white fixed inset-x-0 z-50 transition-all duration-300 ${
+        scrolled ? "bg-darkblue/95 shadow-lg" : "bg-darkblue"
+      }`}
+    >
       <div className="container mx-auto py-4 px-6 flex items-center justify-between">
         {/* Logo */}
         <Link
@@ -36,7 +38,9 @@ const Navbar = () => {
           className="flex items-center space-x-3"
         >
           <Braces />
-          <span className="text-xl font-bold hidden sm:block">{ProfileData.name}</span>
+          <span className="text-xl font-bold hidden sm:block">
+            {ProfileData.name}
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -116,4 +120,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default React.memo(Navbar);

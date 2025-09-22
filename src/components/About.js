@@ -7,7 +7,9 @@ const About = () => {
     <section className="body-font">
       <div className="p-5 mt-3 mx-auto md:mt-5 md:mx-10 lg:mx-16">
         <div id="about" className="flex flex-col text-center w-full mb-3">
-          <h1 className="sm:text-4xl text-3xl font-medium title-font mb-2 text-black">About Me</h1>
+          <h1 className="sm:text-4xl text-3xl font-medium title-font mb-2 text-black">
+            About Me
+          </h1>
           <p
             data-aos="zoom-in"
             data-aos-duration="1000"
@@ -73,4 +75,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default React.memo(About);

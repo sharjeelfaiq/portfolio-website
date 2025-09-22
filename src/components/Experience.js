@@ -1,27 +1,28 @@
-import React, { useState } from "react";
-import ExperienceData from "../data/experience";
 import { motion } from "framer-motion";
+import React, { useState } from "react";
 import { Clock, Building, ChevronDown, ChevronUp } from "lucide-react";
+
+import ExperienceData from "../data/experience";
 
 const Experience = () => {
   const [expanded, setExpanded] = useState({});
 
   const toggleExpand = (index) => {
-    setExpanded(prev => ({
+    setExpanded((prev) => ({
       ...prev,
-      [index]: !prev[index]
+      [index]: !prev[index],
     }));
   };
 
   return (
     <section className="py-8 px-4 bg-gradient-to-b from-white to-slate-50 mt-8 md:mt-12">
       <div className="mx-auto max-w-6xl">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          id="experience" 
+          id="experience"
           className="flex flex-col text-center mb-10 w-full"
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
@@ -29,7 +30,8 @@ const Experience = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded mx-auto mb-4"></div>
           <p className="text-lg max-w-2xl mx-auto leading-relaxed text-gray-600">
-            My journey in the professional world, building solutions and growing as a developer.
+            My journey in the professional world, building solutions and growing
+            as a developer.
           </p>
         </motion.div>
 
@@ -37,7 +39,7 @@ const Experience = () => {
         <div className="md:hidden space-y-6">
           {ExperienceData?.reverse().map((exp, index) => {
             const isExpanded = expanded[index] || false;
-            
+
             return (
               <motion.div
                 key={index}
@@ -62,31 +64,46 @@ const Experience = () => {
                       <h4 className="text-base">{exp.company}</h4>
                     </div>
                   </div>
-                  <button 
+                  <button
                     onClick={() => toggleExpand(index)}
                     className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-                    aria-label={isExpanded ? "Collapse details" : "Expand details"}
+                    aria-label={
+                      isExpanded ? "Collapse details" : "Expand details"
+                    }
                   >
-                    {isExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                    {isExpanded ? (
+                      <ChevronUp size={18} />
+                    ) : (
+                      <ChevronDown size={18} />
+                    )}
                   </button>
                 </div>
-                
-                <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? "max-h-96" : "max-h-24"}`}>
+
+                <div
+                  className={`overflow-hidden transition-all duration-300 ${
+                    isExpanded ? "max-h-96" : "max-h-24"
+                  }`}
+                >
                   <ul className="pl-5 list-disc space-y-2 text-gray-700">
                     {exp?.description?.map((desc, i) => (
-                      <li key={i} className={`text-base ${i >= 2 && !isExpanded ? "hidden" : ""}`}>
+                      <li
+                        key={i}
+                        className={`text-base ${
+                          i >= 2 && !isExpanded ? "hidden" : ""
+                        }`}
+                      >
                         {desc}
                       </li>
                     ))}
                   </ul>
-                  
+
                   {!isExpanded && exp?.description?.length > 2 && (
                     <div className="mt-2 pt-2 text-center text-sm text-blue-500">
                       {exp?.description?.length - 2} more items...
                     </div>
                   )}
                 </div>
-                
+
                 {!isExpanded && (
                   <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
                 )}
@@ -100,19 +117,19 @@ const Experience = () => {
           {ExperienceData?.reverse().map((exp, index) => {
             const isLeft = index % 2 === 0;
             const isExpanded = expanded[index] || false;
-            
+
             const cardVariants = {
               hidden: { opacity: 0, x: isLeft ? 30 : -30 },
-              visible: { 
-                opacity: 1, 
+              visible: {
+                opacity: 1,
                 x: 0,
-                transition: { 
+                transition: {
                   duration: 0.5,
-                  delay: index * 0.2
-                }
-              }
+                  delay: index * 0.2,
+                },
+              },
             };
-            
+
             const TimelineCard = () => (
               <motion.div
                 variants={cardVariants}
@@ -136,40 +153,55 @@ const Experience = () => {
                       <h4 className="text-base">{exp.company}</h4>
                     </div>
                   </div>
-                  <button 
+                  <button
                     onClick={() => toggleExpand(index)}
                     className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-                    aria-label={isExpanded ? "Collapse details" : "Expand details"}
+                    aria-label={
+                      isExpanded ? "Collapse details" : "Expand details"
+                    }
                   >
-                    {isExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                    {isExpanded ? (
+                      <ChevronUp size={18} />
+                    ) : (
+                      <ChevronDown size={18} />
+                    )}
                   </button>
                 </div>
-                
-                <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? "max-h-96" : "max-h-24"}`}>
+
+                <div
+                  className={`overflow-hidden transition-all duration-300 ${
+                    isExpanded ? "max-h-96" : "max-h-24"
+                  }`}
+                >
                   <ul className="pl-5 list-disc space-y-2 text-gray-700">
                     {exp?.description?.map((desc, i) => (
-                      <li key={i} className={`text-base ${i >= 2 && !isExpanded ? "hidden" : ""}`}>
+                      <li
+                        key={i}
+                        className={`text-base ${
+                          i >= 2 && !isExpanded ? "hidden" : ""
+                        }`}
+                      >
                         {desc}
                       </li>
                     ))}
                   </ul>
-                  
+
                   {!isExpanded && exp?.description?.length > 2 && (
                     <div className="mt-2 pt-2 text-center text-sm text-blue-500">
                       {exp?.description?.length - 2} more items...
                     </div>
                   )}
                 </div>
-                
+
                 {!isExpanded && (
                   <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
                 )}
               </motion.div>
             );
-            
+
             return isLeft ? (
               <React.Fragment key={index}>
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.2 + 0.1 }}
@@ -181,7 +213,7 @@ const Experience = () => {
                 <div className="col-span-2 flex justify-center">
                   <div className="relative h-full flex items-center justify-center">
                     <div className="h-full w-1 bg-gradient-to-b from-blue-400 to-purple-500"></div>
-                    <motion.div 
+                    <motion.div
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
                       transition={{ duration: 0.5, delay: index * 0.2 }}
@@ -200,7 +232,7 @@ const Experience = () => {
                 <div className="col-span-2 flex justify-center">
                   <div className="relative h-full flex items-center justify-center">
                     <div className="h-full w-1 bg-gradient-to-b from-blue-400 to-purple-500"></div>
-                    <motion.div 
+                    <motion.div
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
                       transition={{ duration: 0.5, delay: index * 0.2 }}
@@ -211,7 +243,7 @@ const Experience = () => {
                     </motion.div>
                   </div>
                 </div>
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.2 + 0.1 }}
@@ -229,4 +261,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default React.memo(Experience);

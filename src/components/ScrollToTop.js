@@ -19,7 +19,7 @@ const ScrollToTopButton = () => {
   const scrollToTop = () => {
     // Add a little bounce effect before scrolling
     window.scrollTo({ top: window.scrollY - 30, behavior: "smooth" });
-    
+
     // Small delay for the bounce effect to be noticeable
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -36,47 +36,48 @@ const ScrollToTopButton = () => {
   // Button animations
   const buttonVariants = {
     hidden: { opacity: 0, y: 20, scale: 0.8 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
+    visible: {
+      opacity: 1,
+      y: 0,
       scale: 1,
-      transition: { 
+      transition: {
         type: "spring",
         stiffness: 260,
-        damping: 20
-      }
+        damping: 20,
+      },
     },
-    exit: { 
-      opacity: 0, 
-      y: 20, 
+    exit: {
+      opacity: 0,
+      y: 20,
       scale: 0.8,
-      transition: { duration: 0.2 } 
+      transition: { duration: 0.2 },
     },
-    hover: { 
+    hover: {
       scale: 1.1,
-      boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-      transition: { 
+      boxShadow:
+        "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      transition: {
         type: "spring",
         stiffness: 400,
-        damping: 10
-      }
+        damping: 10,
+      },
     },
-    tap: { 
+    tap: {
       scale: 0.9,
-      transition: { type: "spring", stiffness: 400, damping: 10 }
-    }
+      transition: { type: "spring", stiffness: 400, damping: 10 },
+    },
   };
 
   const arrowVariants = {
     normal: { y: 0 },
-    hover: { 
+    hover: {
       y: -5,
-      transition: { 
-        repeat: Infinity, 
-        repeatType: "reverse", 
-        duration: 0.6 
-      }
-    }
+      transition: {
+        repeat: Infinity,
+        repeatType: "reverse",
+        duration: 0.6,
+      },
+    },
   };
 
   return (
@@ -100,9 +101,13 @@ const ScrollToTopButton = () => {
           >
             {/* Inner circle with pulse effect */}
             <div className="absolute inset-0 bg-orange-400 rounded-full opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
-            
+
             {/* Glowing effect on hover */}
-            <div className={`absolute inset-0 bg-orange-300 rounded-full ${isHovered ? 'animate-pulse opacity-20' : 'opacity-0'} transition-opacity duration-300`}></div>
+            <div
+              className={`absolute inset-0 bg-orange-300 rounded-full ${
+                isHovered ? "animate-pulse opacity-20" : "opacity-0"
+              } transition-opacity duration-300`}
+            ></div>
 
             {/* Arrow icon with animation */}
             <motion.div
@@ -122,4 +127,4 @@ const ScrollToTopButton = () => {
   );
 };
 
-export default ScrollToTopButton;
+export default React.memo(ScrollToTopButton);

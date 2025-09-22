@@ -44,14 +44,14 @@ const Projects = () => {
                   alt={project.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                
+
                 {/* Category badge */}
                 {project.category && (
                   <span className="absolute top-3 left-3 px-2 py-1 text-xs font-medium bg-gray-900 bg-opacity-70 text-white rounded">
                     {project.category}
                   </span>
                 )}
-                
+
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 opacity-50 transition-opacity duration-500"></div>
               </div>
@@ -61,7 +61,7 @@ const Projects = () => {
                   {project.name}
                   <ArrowUpRight size={16} className="ml-1 text-blue-500" />
                 </h3>
-                
+
                 <p className="text-gray-600 mb-4 line-clamp-2">
                   {project.description}
                 </p>
@@ -69,7 +69,10 @@ const Projects = () => {
                 {/* Tech stack */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project?.technologies?.map((tech, index) => (
-                    <span key={index} className="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded">
+                    <span
+                      key={index}
+                      className="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded"
+                    >
                       {tech}
                     </span>
                   ))}
@@ -88,7 +91,7 @@ const Projects = () => {
                       </span>
                     )}
                   </div>
-                  
+
                   <div className="flex gap-3">
                     {project.github && (
                       <a
@@ -117,12 +120,10 @@ const Projects = () => {
               </div>
 
               {/* Hover Overlay - Separate from DOM flow, fixed position relative to card */}
-              <div 
-                className="absolute inset-0 bg-gradient-to-t from-blue-900 to-purple-900 flex flex-col justify-center items-center p-6 text-white opacity-0 scale-105 group-hover:opacity-95 group-hover:scale-100 transition-all duration-300 ease-in-out pointer-events-none"
-              >
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-900 to-purple-900 flex flex-col justify-center items-center p-6 text-white opacity-0 scale-105 group-hover:opacity-95 group-hover:scale-100 transition-all duration-300 ease-in-out pointer-events-none">
                 <h3 className="text-2xl font-bold mb-3">{project.name}</h3>
                 <p className="text-center mb-6">{project.description}</p>
-                
+
                 <div className="flex gap-4">
                   {project.github && (
                     <a
@@ -152,7 +153,9 @@ const Projects = () => {
 
         {ProjectsData.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-lg text-gray-500">No projects found in this category.</p>
+            <p className="text-lg text-gray-500">
+              No projects found in this category.
+            </p>
           </div>
         )}
       </div>
@@ -160,4 +163,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default React.memo(Projects);
